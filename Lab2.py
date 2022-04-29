@@ -8,7 +8,6 @@ def get_user_input():
     num_string = input("")
     global numfltglobal
     num_list = num_string.split(", ")
-    print(num_list)
     num_list_flt = [float(i) for i in num_list]
     numfltglobal = num_list_flt
     #print(num_list_flt)
@@ -36,7 +35,14 @@ def find_min_max(h):
     minmaxlst.append(max(h))
     return minmaxlst
 
+def calc_median_temperature(s):
+    s.sort()
+    print("Sorted: ", s)
+    mid = len(s) // 2
+    res = (s[mid] + s[~mid]) / 2
+    return res
 
+#def calc_median_temperature:
 
 
 
@@ -47,3 +53,5 @@ print("The average of the numbers you've entered is:", calc_average(get_user_inp
 #display_main_menu()
 print("Plot Twist! They're actually temperatures! The average temperature is:", calc_average_temperature(numfltglobal),"degrees Celsius.")
 print("Min and Max temperatures are:", find_min_max(numfltglobal),"degrees Celsius respectively.")
+
+print("The median temperature is:", calc_median_temperature(numfltglobal),"degrees Celsius.")
